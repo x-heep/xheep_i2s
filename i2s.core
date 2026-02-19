@@ -21,7 +21,13 @@ filesets:
     - rtl/event_counter.sv
     file_type: systemVerilogSource
 
+  files_verilator_waiver:
+    files:
+      - i2s.vlt
+    file_type: vlt
+
 targets:
   default:
     filesets:
     - files_rtl
+    - tool_verilator ? (files_verilator_waiver)
